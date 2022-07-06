@@ -72,7 +72,7 @@ export class AppComponent implements AfterViewInit {
                             anchorYUnits: "fraction",
                             opacity: 0.75,
                             //https://www.flaticon.com/premium-icon/boat_5695213
-                            src: "./assets/ship.png"
+                            src: "assets/ship.png"
                         })
                     })
                 })
