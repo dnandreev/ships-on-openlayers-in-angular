@@ -1,0 +1,69 @@
+<!--таблица кораблей-->
+<div>
+    <table id="ships">
+        <!--заголовок-->
+        <thead>
+            <tr>
+                <th>Корабль</th>
+                <th>Широта</th>
+                <th>Долгота</th>
+                <th>Действие</th>
+            </tr>
+        </thead>
+        <!--корабли-->
+        <tbody>
+            <!--перебор и вывод массива-->
+            <tr *ngFor="let ship of ships; let index = index">
+                <!--строковая интерполяция-->
+                <td>{{ ship.name }}</td>
+                <td>{{ ship.lat }}</td>
+                <td>{{ ship.lon }}</td>
+                <!--кнопка убирания-->
+                <td>
+                    <input
+                        (click)="removeShip(index)"
+                        type="button"
+                        value="Убрать"
+                    />
+                </td>
+            </tr>
+        </tbody>
+        <!--добавление корабля-->
+        <tfoot>
+            <tr>
+                <!--пример значений-->
+                <td>
+                    <input id="name" />
+                </td>
+                <!--поле ввода широты с указанием пределов допустимых значений-->
+                <td>
+                    <input
+                        id="lat"
+                        type="number"
+                        min="-90"
+                        max="90"
+                        step="0.001"
+                        value="59.95"
+                    />
+                </td>
+                <!--поле ввода долготы с указанием пределов допустимых значений-->
+                <td>
+                    <input
+                        id="lon"
+                        type="number"
+                        min="-180"
+                        max="180"
+                        step="0.001"
+                        value="30.32"
+                    />
+                </td>
+                <!--кнопка добавления-->
+                <td>
+                    <input id="add" type="button" value="Добавить" />
+                </td>
+            </tr>
+        </tfoot>
+    </table>
+</div>
+<!--карта-->
+<div id="map"></div>

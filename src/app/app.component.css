@@ -1,0 +1,49 @@
+/*страница*/
+:host {
+    display: flex;
+    flex-direction: row;
+    height: 100vh;
+}
+
+/*карта*/
+#map {
+    flex-grow: 1;
+}
+
+/*контейнер таблицы кораблей изменяемого размера*/
+div:has(#ships) {
+    overflow: auto;
+    resize: horizontal;
+    min-width: 384px;
+    width: 25vw;
+    background: linear-gradient(
+        135deg,
+        white 0,
+        white calc(100% - 12px),
+        black calc(100% - 4px)
+    );
+}
+
+/*таблица кораблей*/
+#ships {
+    border-collapse: collapse;
+    table-layout: fixed;
+    width: 100%;
+    font-family: "Arial", "Liberation Sans", sans-serif;
+}
+
+/*ячейка*/
+td {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    padding: 4px;
+}
+
+/*элемент ввода*/
+input {
+    box-sizing: border-box;
+    width: 100%;
+    padding: 4px;
+    text-overflow: ellipsis;
+    font: inherit;
+}
